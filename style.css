@@ -1,0 +1,49 @@
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  font-family: 'Catamaran', sans-serif;
+  color: rgb(54, 69, 79);
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 80%;
+}
+
+a, a:visited {
+  color: rgb(51, 87, 232);
+  text-decoration: none;
+}
+
+h3  {
+  font-size: 1.25em;
+  background-color: lightblue;
+  padding: 0 .5rem 0 .5rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-size: 1.15em;
+  border-bottom: 1px solid gray;
+}
+
+pre {
+  color: #000;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: #ccc;
+}
+
+ul {
+  line-height: 1.25rem;
+}
+
+footer {
+  padding: 0 1rem 1rem 1rem;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.markup {
+  font-family: monospace;
+  color: rgb(221, 79, 17);
+}

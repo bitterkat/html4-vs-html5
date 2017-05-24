@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>HTML4 vs. HTML5
+    </title>
+    <link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>HTML4 vs. HTML5
+      </h1>
+      <p>HTML5 brings a lot of improvements over HTML4. It adds in more accessibilty features, improves audio/video capabilities, provides cleaner, and better laid out code, and uses client-side storage better. The following is a summary of those changes.</p>
+      <h2>Table of Contents</h2>
+      <ul>
+        <li><a href="#elements">New Elements</a></li>
+        <li><a href="#syntax">Coding Conventions</a></li>
+        <li><a href="#apis">APIS</a></li>
+      </ul>
+    </header>
+
+    <section>
+      <a id="elements"></a>
+      <h3>New Elements</h3>
+
+      <h4>Semantic Elements</h4>
+      <p>HTML5 brings new elements that are cleaner and easier to read (by search engines, screen readers, and humans) and easier to write and edit (sections are easier to identify than divs, for example).</p>
+
+      <p>The following new semantic elements are used for sectioning content:</p>
+      <ul>
+        <li><span class="markup">section</span> is used for a generic section of a document.</li>
+        <li><span class="markup">article</span> is most widely used for blog entries and news articles.</li>
+        <li><span class="markup">main</span> is used to demark the main content of a document.</li>
+        <li><span class="markup">aside</span> is used for a section of content that is loosely related to the main content of the page. An example would be a box of related links or some fun trivia.</li>
+        <li><span class="markup">header</span> is used for a page's introduction (title, logo, main navigation section).</li>
+        <li><span class="markup">footer</span> is used for bottom of the page content (items like copyright information, links to author and contact information).</li>
+        <li><span class="markup">nav</span> is used for the main navigation of the site.</li>
+        <li><span class="markup">figure</span> is used for self-contained flow content.</li>
+        <li><span class="markup">figcaption</span> an optional caption element used with <span class="markup">figure</span>.</li>
+        <li><span class="markup">template</span> is used to create fragments of HTML that can scripted to be cloned and re-used in the document.</li>
+      </ul>
+      <p>Previously, DIVs were used for layout:</p>
+<pre>
+&lt;div id="header"&gt;
+&lt;h1&gt;Header Text&lt;/h1&gt;
+  &lt;div id="nav"&gt;
+    &lt;ul&gt;
+      &lt;li&gt;link1&lt;/li&gt;
+      &lt;li&gt;link2&lt;/li&gt;
+      &lt;li&gt;link3&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+      <p>A cleaner layout using HTML5 sectioning tags:</p>
+<pre>
+&lt;header&gt;
+&lt;h1&gt;Header Text&lt;/h1&gt;
+  &lt;nav&gt;
+    &lt;ul&gt;
+      &lt;li&gt;link1&lt;/li&gt;
+      &lt;li&gt;link2&lt;/li&gt;
+      &lt;li&gt;link3&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+</pre>
+
+      <h4>Other new HTML5 elements</h4>
+      <ul>
+        <li>new attributes for forms (number, date, time, calendar, and range)
+        </li>
+        <li>graphic elements (<span class="markup">svg</span> and <span class="markup">canvas</span>)</li>
+        <li>multimedia elements (<span class="markup">audio</span> and <span class="markup">video</span>)</li>
+      </ul>
+
+      <p>Example of using the <span class="markup">video</span> element, without the need to use a  plug-in:</p>
+
+<pre>
+  &lt;video width="320" height="240" controls&gt;
+    &lt;source src="movie.mp4" type="video/mp4"&gt;
+    &lt;source src="movie.ogg" type="video/ogg"&gt;
+  Your browser does not support the video tag.
+  &lt;/video&gt;
+</pre>
+
+      <h4>Create your own elements in HTML5</h4>
+<pre>
+&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;style&gt;
+      small {
+      display: block;
+      background-color: black;
+      padding: 2rem;
+      font: 11px;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;h1&gt;My Heading&lt;/h1&gt;
+    &lt;small&gt;Small Element&lt;/small&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+      <p><a href="https://www.w3schools.com/tags/">Full list of HTML elements (with new HTML5 tags noted)</a></p>
+    </section>
+
+    <section>
+      <a id="syntax"></a>
+      <h3>Coding Conventions</h3>
+      <p>
+        HTML5 isn't strict about code validation but adhering as much to "<a href="https://www.w3schools.com/html/html_xhtml.asp">XHTML</a>-style" syntax can future-proof your HTML.
+      </p>
+
+      <h4>Doctype</h4>
+      <p>HTML4 Transitional DOCTYPE:</p>
+<pre>
+  &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"&gt;
+  "http://www.w3.org/TR/html4/loose.dtd"
+</pre>
+      <p>HTML5 DTD-less DOCTYPE:</p>
+<pre>
+  &lt;!doctype html&gt;
+</pre>
+
+      <h4>Encoding</h4>
+      <p>HTML4 encoding:</p>
+<pre>
+  &lt;meta http-equiv="Content-Type" content="text/html;charset=utf-8"&gt;
+</pre>
+
+      <p>HTML5 encoding:</p>
+<pre>
+  &lt;meta charset="utf-8"&gt;
+</pre>
+      <h4>Lower case element names</h4>
+      <p>While HTML5 allows the use of uppercase and lower case letters in element names, for consistency, you should use all lower case letters. Your code will look cleaner and be easier to write.</p>
+
+      <p>Bad</p>
+<pre>
+  &lt;HEADER&gt;
+  &lt;H1&gt;Header Text&lt;/H1&gt;
+    &lt;p&gt;Some sentence.&lt;/p&gt;
+  &lt;/HEADER&gt;
+</pre>
+
+      <p>Good</p>
+<pre>
+  &lt;header&gt;
+  &lt;h1&gt;Header Text&lt;/h1&gt;
+    &lt;p&gt;Some sentence.&lt;/p&gt;
+  &lt;/header&gt;
+</pre>
+      <p>Other coding conventions include:</p>
+      <ul>
+        <li>Close empty html elements.</li>
+        <li>Use lower case attribute names.</li>
+        <li>Quote attribute values.</li>
+        <li>Include alt attribute with images.</li>
+        <li>Remove spaces around equal signs.</li>
+      </ul>
+    </section>
+
+    <section>
+      <a id="apis"></a>
+      <h3>New HTML5 Application Programming Interfaces (APIs)</h3>
+      <p>Highlights include:</p>
+      <ul>
+        <li>HTML Geolocation: Used to find a user's position</li>
+        <li>HTML Drag and Drop: Make an element draggable (and droppable)</li>
+        <li>HTML Local Storage: Store data locally, in the user's browser</li>
+        <li>HTML Web Workers: JavaScript runs in the background to improve performance</li>
+        <li>HTML Server-Sent Events: Web page automatically gets updates from a server</li>
+      </ul>
+      <p>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API">Current web APIs available</a>
+      </p>
+    </section>
+
+    <footer>
+      <p>References:</p>
+      <ul>
+        <li><a href="https://www.w3schools.com/html/html5_intro.asp">https://www.w3schools.com/html/html5_intro.asp</a></li>
+        <li><a href="https://www.w3.org/TR/html5-diff/#content-model">https://www.w3.org/TR/html5-diff/#content-model</a></li>
+        <li><a href="https://tympanus.net/codrops/2011/11/24/top-10-reasons-to-use-html5-right-now/">https://tympanus.net/codrops/2011/11/24/top-10-reasons-to-use-html5-right-now/</a></li>
+        <li><a href="https://24ways.org/2010/html5-local-storage">https://24ways.org/2010/html5-local-storage</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>
